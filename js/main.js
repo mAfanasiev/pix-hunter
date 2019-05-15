@@ -1,5 +1,5 @@
 import {showScreen} from './util';
-import intro from './intro';
+import intro from './components/intro/index';
 
 showScreen(intro());
 

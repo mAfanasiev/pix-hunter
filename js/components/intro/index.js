@@ -1,5 +1,5 @@
-import {nextPage, getElementFromTemplate} from './util';
-import greeting from './greeting';
+import {nextPage, getElementFromTemplate} from '../../util';
+import greeting from '../greeting/index';
 
 const INTRO = `<div id="intro" class="intro">
 <h1 class="intro__asterisk">*</h1>

@@ -3,7 +3,7 @@ const getElementFromTemplate = (template) => {
 
   container.innerHTML = template;
 
-  return container.children[0].content || container.children[0];
+  return container;
 };
 
 const showScreen = (screen) => {
