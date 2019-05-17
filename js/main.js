@@ -1,7 +1,6 @@
-import {showScreen} from './util';
-import intro from './components/intro/index';
+import showIntro from './modules/intro/screen';
 
-showScreen(intro());
+showIntro();
 
 document.addEventListener(`click`, (e) => {
   const goHomeButton = e.target.closest(`.back`);
@@ -10,5 +9,5 @@ document.addEventListener(`click`, (e) => {
     return;
   }
 
-  showScreen(intro());
+  showIntro();
 });

@@ -10,8 +10,9 @@
 
 .central__content {
   display: flex;
+  flex-direction: column;
   min-height: 740px;
   width: 100%;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
 }

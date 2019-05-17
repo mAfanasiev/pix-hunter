@@ -6,7 +6,7 @@ const getElementFromTemplate = (template) => {
   return container;
 };
 
-const showScreen = (screen) => {
+const changeView = (screen) => {
   const container = document.querySelector(`#main`);
 
   container.innerHTML = ``;
@@ -14,11 +14,11 @@ const showScreen = (screen) => {
 };
 
 const nextPage = (container) => (element) => (nextScreen) => {
-  container.querySelector(element).addEventListener(`click`, () => (showScreen(nextScreen)));
+  container.querySelector(element).addEventListener(`click`, () => (changeView(nextScreen)));
 };
 
 export {
   getElementFromTemplate,
-  showScreen,
+  changeView,
   nextPage,
 };
