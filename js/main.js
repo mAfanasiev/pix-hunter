@@ -1,13 +1,5 @@
-import showIntro from './modules/intro/screen';
+import Application from './Application';
 
-showIntro();
-
-document.addEventListener(`click`, (e) => {
-  const goHomeButton = e.target.closest(`.back`);
-
-  if (!goHomeButton) {
-    return;
-  }
-
-  showIntro();
+document.addEventListener(`DOMContentLoaded`, () => {
+  Application.showIntro();
 });

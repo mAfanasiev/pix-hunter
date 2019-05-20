@@ -6,19 +6,11 @@ const getElementFromTemplate = (template) => {
   return container;
 };
 
-const changeView = (screen) => {
-  const container = document.querySelector(`#main`);
-
-  container.innerHTML = ``;
-  container.appendChild(screen);
-};
-
-const nextPage = (container) => (element) => (nextScreen) => {
-  container.querySelector(element).addEventListener(`click`, () => (changeView(nextScreen)));
+const isObject = (value) => {
+  return (typeof value === `object`) && !Array.isArray(value);
 };
 
 export {
+  isObject,
   getElementFromTemplate,
-  changeView,
-  nextPage,
 };

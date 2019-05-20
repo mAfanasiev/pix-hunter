@@ -1,14 +1,18 @@
+const times = {
+  start: 30,
+  critical: 5,
+  frequency: 1000
+};
+
 const INITIAL_GAME = {
   task: {},
   tasks: [],
   answers: [],
   lives: 3,
-  timer: 25,
+  time: times.start
 };
 
 const GAME_ROUNDS = 10;
-
-const TIMER_TIME = 30;
 
 const life = {
   count: INITIAL_GAME.lives,
@@ -29,7 +33,7 @@ const answerTime = {
 export {
   INITIAL_GAME,
   GAME_ROUNDS,
-  TIMER_TIME,
+  times,
   answerPoint,
   answerTime,
   life,
