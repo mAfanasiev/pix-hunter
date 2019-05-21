@@ -1,5 +1,8 @@
-import {GAME_ROUNDS, answerPoint, answerTime, life} from '../../data/gameParams';
-import {isObject} from '../../util';
+import {GAME_ROUNDS, answerPoint, answerTime, life} from '../../settings';
+
+export const isObject = (value) => {
+  return (typeof value === `object`) && !Array.isArray(value);
+};
 
 export const calculateAnswerScore = (answer) => {
   if (!isObject(answer)) {

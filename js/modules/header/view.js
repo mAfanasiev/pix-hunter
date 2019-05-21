@@ -1,5 +1,5 @@
 import AbstractView from '../../abstractView';
-import {times, life} from '../../data/gameParams';
+import {time as times, life} from '../../settings';
 
 const drawHeart = (full) => {
   return `<img src='img/heart__${full ? `full` : `empty`}.svg' class='game__heart' alt='Life' width='32' height='32'>`;

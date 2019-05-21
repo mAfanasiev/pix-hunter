@@ -1,16 +1,18 @@
-const getElementFromTemplate = (template) => {
-  const container = document.createElement(`div`);
+const container = document.querySelector(`#main`);
 
-  container.innerHTML = template;
-
-  return container;
+export const changeView = (element) => {
+  container.innerHTML = ``;
+  container.append(element);
 };
 
-const isObject = (value) => {
-  return (typeof value === `object`) && !Array.isArray(value);
+export const createElement = (template = ``, tagName = `template`) => {
+  const element = document.createElement(tagName);
+  element.innerHTML = template;
+
+  return element.content || element;
 };
 
-export {
-  isObject,
-  getElementFromTemplate,
+export const formatDate = (ms) => {
+  const date = new Date(ms);
+  return date.toLocaleString(`ru`);
 };

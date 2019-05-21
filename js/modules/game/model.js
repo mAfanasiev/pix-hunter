@@ -1,10 +1,14 @@
-import {INITIAL_GAME, GAME_ROUNDS, times} from '../../data/gameParams';
-import {TASKS} from '../../data/structure';
-import createTimer from '../../data/timer';
+import {INITIAL_GAME, GAME_ROUNDS, time} from '../../settings';
+import createTimer from '../../timer/timer';
 
 export default class GameModel {
-  constructor(playerName) {
+  constructor({taskData: data, playerName}) {
     this._playerName = playerName;
+    this._data = data;
+  }
+
+  get player() {
+    return this._playerName;
   }
 
   get state() {
@@ -13,7 +17,7 @@ export default class GameModel {
 
   init() {
     this._state = Object.assign({}, INITIAL_GAME, {
-      tasks: [...TASKS]
+      tasks: [...this._data]
     });
   }
 
@@ -27,7 +31,7 @@ export default class GameModel {
 
   addAnswer(answer) {
     this._state = Object.assign({}, this._state, {
-      answers: [...this._state.answers, {isCorrect: answer, time: times.start - this._state.time}]
+      answers: [...this._state.answers, {isCorrect: answer, time: time.start - this._state.time}]
     });
   }
 
@@ -56,7 +60,7 @@ export default class GameModel {
 
   _resetTime() {
     this._state = Object.assign({}, this._state, {
-      time: times.start
+      time: time.start
     });
   }
 }

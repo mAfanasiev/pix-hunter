@@ -1,12 +1,12 @@
-import {times} from '../../data/gameParams';
+import {time} from '../../settings';
 import headerView from '../header/screen';
 import GameView from './view';
 import Application from '../../Application';
 import GameModel from './model';
 
 export default class GameScreen {
-  constructor(playerName) {
-    this._model = new GameModel(playerName);
+  constructor(data) {
+    this._model = new GameModel(data);
   }
 
   get element() {
@@ -16,7 +16,6 @@ export default class GameScreen {
   startGame() {
     this._model.init();
 
-    //
     this._root = document.createElement(`div`);
     this._header = headerView(this._model.state);
     this._root.appendChild(this._header.element);
@@ -34,7 +33,7 @@ export default class GameScreen {
         this._answer();
       }
       this._updateTime();
-    }, times.frequency);
+    }, time.frequency);
   }
 
   _updateTime() {
@@ -81,6 +80,6 @@ export default class GameScreen {
   }
 
   _finishGame() {
-    Application.showResult(this._model.state);
+    Application.finish(this._model);
   }
 }
